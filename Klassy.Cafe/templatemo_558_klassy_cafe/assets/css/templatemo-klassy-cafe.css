@@ -247,10 +247,11 @@ header
 .header-area .main-nav {
   min-height: 80px;
   background: transparent;
+  display: flex;
+  align-items: center;
 }
 
 .header-area .main-nav .logo {
-  line-height: 100px;
   color: #fff;
   font-size: 28px;
   font-weight: 700;
@@ -261,6 +262,13 @@ header
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+}
+
+.header-area .main-nav .logo img {
+  max-height: 100px;
+  width: auto;
+  margin-top: 15px;
+  vertical-align: middle;
 }
 
 .background-header .main-nav .logo {
