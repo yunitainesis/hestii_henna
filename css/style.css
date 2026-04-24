@@ -380,17 +380,25 @@ html, body{ height: 100%; }
 
 #hestii-site .logo .navbar-brand img.main-brand-logo {
     display: block;
-    height: 75px; /* Sesuaikan tinggi logo kamu */
+    height: 65px; /* Sesuaikan tinggi logo kamu */
     width: auto;
     visibility: visible;
     opacity: 1;
 }
 
-#hestii-site .navbar-brand {
-    background-image: none;
-    background: transparent;
-    text-indent: 0;
-    padding: 10px 0;
+#hestii-site .navbar-default .navbar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0; 
+    padding: 5px 0;
+    height: auto;
+    background-image: none; 
+}
+
+#hestii-site .navbar-header .logo {
+    float: left;
+    width: auto;
 }
 
 #hestii-site .navbar-brand::before, 
