@@ -409,6 +409,36 @@ body {
     display: none;
     content: none;
 }
+
+#hestii-site .navbar-brand img {
+    height: 75px; 
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+#hestii-site .navbar-default .navbar-nav > .active > a,
+#hestii-site .navbar-default .navbar-nav > .active > a:focus,
+#hestii-site .navbar-default .navbar-nav > .active > a:hover {
+    background-color: transparent;
+    color: #e9981e; 
+    text-decoration: none;
+    position: relative;
+}
+
+#hestii-site .navbar-default .navbar-nav > .active > a::after {
+    content: "";
+    position: absolute;
+    width: 80%; 
+    height: 2px; 
+    bottom: 5px;
+    left: 10%;
+    background-color: #e9981e;
+}
+
+#hestii-site .navbar-default .navbar-nav > li > a:hover {
+    color: #e9981e;
+    background-color: transparent;
+}
 /*------------------------------------------------------------------
     BANNER AREA
 -------------------------------------------------------------------*/
