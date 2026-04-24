@@ -378,33 +378,36 @@ html, body{ height: 100%; }
     padding: 32px 0px 10px 0;
 }
 
-/* Selector super spesifik untuk mengunci posisi logo */
-#hestii-site #header .navbar-header .logo {
-    float: left;
-    text-align: left;
-    width: auto;
+
+#hestii-site header.header-block-top {
+    background-color: #ffffff; /* Tambahkan warna background di sini */
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Memastikan elemen link logo tidak lari ke tengah */
-#hestii-site #header .navbar-brand {
+
+#hestii-site .navbar-default .navbar-header .logo a.navbar-brand {
     margin: 0;
+    float: left;
     display: block;
-    background-image: none; /* Menghapus logo bawaan template */
+    background: none;
 }
 
-/* Mengatur ukuran logo PNG kamu agar tidak berubah-ubah */
-#hestii-site #header .navbar-brand img {
-    height: 60px; /* Atur tinggi yang kamu mau di sini */
+
+#hestii-site .navbar-header .logo a.navbar-brand img {
+    height: 35px;
     width: auto;
+    opacity: 1;
+    visibility: visible;
 }
 
-/* Menghilangkan background warna/kotak di belakang logo */
-#hestii-site #header .navbar-brand::before, 
-#hestii-site #header .navbar-brand::after {
-    content: none;
-    display: none;
-}
 
+#hestii-site .header-block-top .navbar-default {
+    background: #ffffff;
+    margin-bottom: 0;
+}
 /*------------------------------------------------------------------
     BANNER AREA
 -------------------------------------------------------------------*/
