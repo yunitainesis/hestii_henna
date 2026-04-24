@@ -378,6 +378,27 @@ html, body{ height: 100%; }
     padding: 32px 0px 10px 0;
 }
 
+#hestii-site .logo .navbar-brand img.main-brand-logo {
+    display: block;
+    height: 75px; /* Sesuaikan tinggi logo kamu */
+    width: auto;
+    visibility: visible;
+    opacity: 1;
+}
+
+#hestii-site .navbar-brand {
+    background-image: none;
+    background: transparent;
+    text-indent: 0;
+    padding: 10px 0;
+}
+
+#hestii-site .navbar-brand::before, 
+#hestii-site .navbar-brand::after {
+    content: none;
+    display: none;
+}
+
 /*------------------------------------------------------------------
     BANNER AREA
 -------------------------------------------------------------------*/
