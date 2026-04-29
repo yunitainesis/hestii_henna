@@ -68,7 +68,7 @@ body{
 	color:#686868;
 	font-size:14px;
 	font-family: 'Roboto', sans-serif;
-	line-height:1.80857;
+	line-height:1.5;
 }
 
 a {
@@ -99,11 +99,14 @@ h6 {
 }
 
 h1 {
-    font-size: 24px
+    font-size: 50px !important;
+    text-shadow: black 2px 2px 4px;
 }
 
 h2 {
-    font-size: 22px
+    font-size: 25px;
+    font-weight: bold;
+    text-shadow: black 2px 2px 4px;
 }
 
 h3 {
@@ -142,6 +145,12 @@ h6 a:hover {
     opacity: .8
 }
 
+p {
+    color: #583001 !important;
+    text-shadow: 2px 2px 4px rgb(255, 255, 255);
+    font-weight: bold;
+}
+
 ul, li, ol{
 	margin:0px;
 	padding:0px;
@@ -155,7 +164,7 @@ a {
 }
 
 a,
-.btn {
+.btn {  
     text-decoration: none !important;
     outline: none !important;
     -webkit-transition: all .3s ease-in-out;
@@ -273,7 +282,7 @@ html, body{ height: 100%; }
 
 /* Pengaturan Logo agar proporsional */
 .logo-header img {
-    max-height: 70px; /* Tinggi maksimal logo agar tidak merusak navbar */
+    max-height: 100px; /* Tinggi maksimal logo agar tidak merusak navbar */
     width: auto;      /* Lebar otomatis mengikuti proporsi */
     display: block;
     filter: brightness(0) invert(1);
@@ -282,6 +291,9 @@ html, body{ height: 100%; }
 
 .main-menu .navbar-default {
     background-color: transparent; /* Transparan saat di atas banner */
+    opacity: 0; /* Navbar tidak terlihat di awal */
+    animation: fadeInNavbar 0.5s ease forwards; /* Memanggil animasi */
+    animation-delay: 1.5s;
 }
 
 .main-menu .navbar {
@@ -367,6 +379,16 @@ html, body{ height: 100%; }
 .fixed-menu .main-menu nav li a {
     padding: 25px 15px 10px 15px; /* Menu naik sedikit mengikuti tinggi header baru */
 }
+
+@keyframes fadeInNavbar {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 /*------------------------------------------------------------------
     BANNER AREA
 -------------------------------------------------------------------*/
@@ -374,7 +396,7 @@ html, body{ height: 100%; }
 .banner{
 	background:url(../images/banner.jpeg) no-repeat center top;
 	background-attachment:fixed;
-	background-size:cover;
+	background-size:cover;  
 	height:100vh;
 	min-height:100%;
 }
