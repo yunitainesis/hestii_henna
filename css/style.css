@@ -331,35 +331,22 @@ html, body{ height: 100%; }
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
-/* Warna saat menu di-hover atau aktif dengan efek Underline Gold */
-.main-menu .navbar-default .navbar-nav > .active > a,
-.main-menu .navbar-default .navbar-nav > .active > a:hover,
-.main-menu .navbar-default .navbar-nav > .active > a:focus,
-.main-menu .navbar-default .navbar-nav > li > a:hover {
-    color: #D4AF37 !important; /* Warna Gold */
-    background-color: transparent !important; /* Menghilangkan background bawaan */
-    position: relative; /* Penting untuk posisi garis bawah */
+:root {
+    /* Set default awal ke Orange */
+    --main-theme-color: #e75b1e; 
 }
 
-/* Membuat efek Underline Gold saat di-hover */
-.main-menu .navbar-default .navbar-nav > li > a::after {
-    content: ''; /* Membuat elemen garis */
-    position: absolute; /* Menempatkan garis relatif terhadap teks[cite: 2] */
-    bottom: 5px; /* Jarak garis dari bawah teks[cite: 2] */
-    left: 15%; /* Memulai garis sedikit ke tengah[cite: 2] */
-    width: 0; /* Awalnya garis tidak terlihat[cite: 2] */
-    height: 2px; /* Ketebalan garis[cite: 2] */
-    background-color: #D4AF37; /* Warna Gold pada garis[cite: 2] */
-    transition: width 0.3s ease; /* Animasi garis memanjang[cite: 2] */
+/* Memastikan elemen navigasi menggunakan variabel root */
+#mainNav .nav.navbar-nav li a:hover,
+#mainNav .nav.navbar-nav li.active a {
+    color: var(--main-theme-color);
+    background: transparent;
 }
 
-/* Animasi memunculkan Underline saat kursor diarahkan ke menu */
-.main-menu .navbar-default .navbar-nav > li > a:hover::after,
-.main-menu .navbar-default .navbar-nav > .active > a::after {
-    width: 70%; /* Lebar garis saat aktif atau di-hover[cite: 2] */
+#mainNav .nav.navbar-nav li a::after, 
+#mainNav .nav.navbar-nav li a::before {
+    background: var(--main-theme-color) !important;
 }
-
-
 .fixed-menu {
     position: fixed !important;
     width: 100%;
@@ -1912,6 +1899,11 @@ textarea:focus, input:focus, select:focus, .bootstrap-select .dropdown-toggle:fo
 .vivid-yellow-bg{
 	background: #fdcb03;
 }
+
+.pink-bg{
+    background: #da5581;
+}
+
 /* Mengatur thumbnail gambar henna di galeri */
 .img-henna {
   width: 100%;
