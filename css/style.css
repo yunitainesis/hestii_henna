@@ -257,194 +257,122 @@ html, body{ height: 100%; }
     HEADER AREA
 -------------------------------------------------------------------*/
 
-#site-header{
-	
-}
-#header{}
-.logo{
-	float:left;
-}
-.header-block-top{
-	position: absolute;
-    z-index: 11;
+.header-block-top {
+    position: absolute;
+    z-index: 9999;
     width: 100%;
     top: 0;
     left: 0;
 }
 
-.main-menu{}
-.header-block-top .navbar-brand {
-    margin: 0 !important;
-    padding: 15px 0 15px;
-    display: inline-block;
-    line-height: normal;
-    font-size: 100%;
-    height: 100%;
+.logo {
+    float: left; /* Memastikan logo tetap di kiri */
+    padding: 0;
+    margin: 0;
 }
-.main-menu .navbar-default{
-	background-color:transparent;
+
+/* Pengaturan Logo agar proporsional */
+.logo-header img {
+    max-height: 70px; /* Tinggi maksimal logo agar tidak merusak navbar */
+    width: auto;      /* Lebar otomatis mengikuti proporsi */
+    display: block;
+    filter: brightness(0) invert(1);
+    transition: all 0.3s ease;
 }
-.main-menu .navbar{
-	min-height:inherit;
-	border-radius:0px;
-	border:none;
-	margin:0px;
+
+.main-menu .navbar-default {
+    background-color: transparent; /* Transparan saat di atas banner */
 }
-.main-menu nav .navbar-header .navbar-brand{
-	height:inherit;
+
+.main-menu .navbar {
+    min-height: inherit;
+    border-radius: 0px;
+    border: none;
+    margin: 0px;
 }
-.main-menu .navbar-default .navbar-nav li a{
-	color:#fff;
+
+/* Menyeimbangkan posisi Vertikal Logo */
+.main-menu nav .navbar-header .navbar-brand {
+    height: auto; 
+    padding: 10px 0; 
+    display: flex;
+    align-items: center; 
 }
-.main-menu nav li a{
-	padding: 43px 0px 15px;
-	margin: 0 14px;
-	color: #fff;
-	font-family: 'Roboto', sans-serif;
+
+/* Menghilangkan garis dekorasi bawaan template pada logo */
+.navbar-brand::before, .navbar-brand::after {
+    display: none !important;
+    content: none !important;
+}
+
+/* Pengaturan Teks Menu */
+.main-menu nav li a {
+    padding: 40px 15px 15px; /* Jarak atas agar teks sejajar tengah dengan logo */
+    color: hsl(0, 0%, 100%) !important;
+    font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1.6px;
-	position:relative;
-	-webkit-transition: color 0.4s;
-    transition: color 0.4s;
+    position: relative;
     font-weight: 500;
     font-size: 14px;
+    background-color: transparent !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
-.main-menu nav li a::after,  .main-menu nav li a::before{
-	content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    -webkit-transform: scale3d(0, 1, 1);
-    transform: scale3d(0, 1, 1);
-    -webkit-transform-origin: center left;
-    transform-origin: center left;
-    -webkit-transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
-    transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+/* Warna saat menu di-hover atau aktif dengan efek Underline Gold */
+.main-menu .navbar-default .navbar-nav > .active > a,
+.main-menu .navbar-default .navbar-nav > .active > a:hover,
+.main-menu .navbar-default .navbar-nav > .active > a:focus,
+.main-menu .navbar-default .navbar-nav > li > a:hover {
+    color: #D4AF37 !important; /* Warna Gold */
+    background-color: transparent !important; /* Menghilangkan background bawaan */
+    position: relative; /* Penting untuk posisi garis bawah */
 }
 
-
-
-.main-menu nav li a::before {
-    background: #b5b5b5;
-    -webkit-transition-delay: 0.4s;
-    transition-delay: 0.4s;
+/* Membuat efek Underline Gold saat di-hover */
+.main-menu .navbar-default .navbar-nav > li > a::after {
+    content: ''; /* Membuat elemen garis */
+    position: absolute; /* Menempatkan garis relatif terhadap teks[cite: 2] */
+    bottom: 5px; /* Jarak garis dari bawah teks[cite: 2] */
+    left: 15%; /* Memulai garis sedikit ke tengah[cite: 2] */
+    width: 0; /* Awalnya garis tidak terlihat[cite: 2] */
+    height: 2px; /* Ketebalan garis[cite: 2] */
+    background-color: #D4AF37; /* Warna Gold pada garis[cite: 2] */
+    transition: width 0.3s ease; /* Animasi garis memanjang[cite: 2] */
 }
 
-.main-menu nav li.active a::before {
-	-webkit-transition-delay: 0s;
-    transition-delay: 0s;
+/* Animasi memunculkan Underline saat kursor diarahkan ke menu */
+.main-menu .navbar-default .navbar-nav > li > a:hover::after,
+.main-menu .navbar-default .navbar-nav > .active > a::after {
+    width: 70%; /* Lebar garis saat aktif atau di-hover[cite: 2] */
 }
 
-.main-menu nav li.active a::after, .main-menu nav li.active a::before {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-}
-
-.main-menu nav li a:hover::before, .main-menu nav li a:focus::before {
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
-    -webkit-transition-delay: 0s;
-    transition-delay: 0s;
-}
-
-.main-menu .navbar-default .navbar-nav .active a{
-	background-color:transparent;
-}
 
 .fixed-menu {
-    position: fixed;
+    position: fixed !important;
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 999;
-    background-color: #202020;
+    z-index: 9999 !important;
+    background-color: #202020; /* Berubah jadi hitam saat scroll */
     transition: 0.5s;
-    padding: 10px 0 0 0;
+    padding: 5px 0 0 0;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
-.fixed-menu .navbar-brand{
-	padding: 10px 0 10px;
+.fixed-menu .logo-header img {
+    max-height: 45px; /* Logo sedikit mengecil agar taskbar ramping */
 }
 
-.fixed-menu .navbar-brand>img {
-    max-width: 150px;
-}
-
-.fixed-menu .main-menu nav li a{
-    padding: 32px 0px 10px 0;
-}
-
-
-.navbar-default {
-    background-color: #ffffff; 
-    transition: all 0.3s ease;
-}
-
-
-.navbar-default .navbar-nav > li > a {
-    color: #333;
-    font-weight: 500;
-    text-transform: uppercase;
-    font-size: 13px;
-    letter-spacing: 1px;
-}
-
-
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-    color: #f39c12; 
-}
-
-
-body {
-    padding-top: 70px;
-}
-
-
-.navbar-brand::before, .navbar-brand::after {
-    display: none;
-    content: none;
-}
-
-#hestii-site .navbar-brand img {
-    height: 75px; 
-    width: auto;
-    transition: all 0.3s ease;
-}
-
-#hestii-site .navbar-default .navbar-nav > .active > a,
-#hestii-site .navbar-default .navbar-nav > .active > a:focus,
-#hestii-site .navbar-default .navbar-nav > .active > a:hover {
-    background-color: transparent;
-    color: #e9981e; 
-    text-decoration: none;
-    position: relative;
-}
-
-#hestii-site .navbar-default .navbar-nav > .active > a::after {
-    content: "";
-    position: absolute;
-    width: 80%; 
-    height: 2px; 
-    bottom: 5px;
-    left: 10%;
-    background-color: #e9981e;
-}
-
-#hestii-site .navbar-default .navbar-nav > li > a:hover {
-    color: #e9981e;
-    background-color: transparent;
+.fixed-menu .main-menu nav li a {
+    padding: 25px 15px 10px 15px; /* Menu naik sedikit mengikuti tinggi header baru */
 }
 /*------------------------------------------------------------------
     BANNER AREA
 -------------------------------------------------------------------*/
 
 .banner{
-	background:url(../images/banner.jpg) no-repeat center top;
+	background:url(../images/banner.jpeg) no-repeat center top;
 	background-attachment:fixed;
 	background-size:cover;
 	height:100vh;
