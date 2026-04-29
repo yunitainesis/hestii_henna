@@ -84,7 +84,7 @@
             </div>
         </div>
 <!-- ======================== -->
-<!-- GAMBAR 2: HENNA GOLD FULL -->
+<!-- GAMBAR : HENNA GOLD FULL -->
 <!-- ======================== -->
         <div class="col-md-4 col-sm-6 col-xs-12 gal-item">
             <div class="box">
@@ -112,22 +112,21 @@
     </div>
   </div>
 </div>
+</div>
 <!-- ======================== -->
 <!-- GAMBAR 3: HENNA GOLD FULL -->
 <!-- ======================== -->
 <div class="col-md-4 col-sm-6 col-xs-12 gal-item">
     <div class="box">
-        <!-- data-target harus unik, kita gunakan id_gold_03 -->
+        <!-- Pastikan target unik ke id_gold_03 -->
         <a href="#" data-toggle="modal" data-target="#id_gold_03">
-            <!-- Menambahkan style height dan object-fit agar foto tidak berantakan -->
+            <!-- Style ini memaksa gambar 3 mengikuti ukuran gambar 1 & 2 -->
             <img src="images/henna-gold/gold_full/henna-gold-full-03.jpeg" 
                  alt="Henna Gold Full" 
                  class="img-henna" 
-                 style="height: 250px; width: 100%; object-fit: cover;" />
+                 style="height: 250px !important; width: 100%; object-fit: cover; display: block;" />
         </a>
         
-        <!-- Bagian Pop-up (Modal) -->
-        <!-- ID harus sama dengan data-target di atas -->
         <div class="modal fade" id="id_gold_03" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -135,7 +134,6 @@
                         <span aria-hidden="true">×</span>
                     </button>
                     <div class="modal-body">
-                        <!-- Gambar ukuran penuh di dalam pop-up -->
                         <img src="images/henna-gold/gold_full/henna-gold-full-03.jpeg" alt="Henna Gold Full" style="width: 100%;" />
                     </div>
                     <div class="col-md-12 description">
