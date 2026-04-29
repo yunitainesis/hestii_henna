@@ -45,45 +45,47 @@
 </head>
 <body>
 
-    <!-- Kamu bisa mulai menulis kode tampilan (seperti header, gambar, teks) di bawah ini -->
-      <h1 class="block-title text-center">Gallery Henna Gold</h1>
-              <p class="title-caption text-center">
-                There are many variations of henna available
-              </p>
-            <div class="gal-container clearfix">
-  
-  <div class="gal-container clearfix">
+    <!-- Header Halaman -->
+    <h1 class="block-title text-center">Gallery Henna Gold</h1>
+    <p class="title-caption text-center">
+        There are many variations of henna available
+    </p>
 
-  <!-- ======================== -->
-  <!-- GAMBAR 1: HENNA GOLD FULL -->
-  <!-- ======================== -->
-  <div class="col-md-4 col-sm-6 col-xs-12 gal-item">
-    <div class="box">
-      <!-- Tombol klik yang memicu pop-up (Modal) -->
-      <a href="#" data-toggle="modal" data-target="#1">
-        <!-- Perhatikan path folder di bawah ini (images/henna-gold/...) -->
-        <img src="images/henna-gold/henna-gold-full-01.jpeg" alt="Henna Gold Full" class="img-henna" />
-      </a>
-      
-      <!-- Bagian Pop-up (Modal) -->
-      <div class="modal fade" id="1" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-            <div class="modal-body">
-              <!-- Gambar ukuran penuh di dalam pop-up -->
-              <img src="images/henna-gold/henna-gold-full-01.jpeg" alt="Henna Gold Full" style="width: 100%;" />
+    <!-- Container Galeri (Cukup Satu) -->
+    <div class="gal-container clearfix">
+
+        <!-- ======================== -->
+        <!-- GAMBAR 1: HENNA GOLD FULL -->
+        <!-- ======================== -->
+        <div class="col-md-4 col-sm-6 col-xs-12 gal-item">
+            <div class="box">
+                <!-- Tombol klik yang memicu pop-up (Modal) -->
+                <a href="#" data-toggle="modal" data-target="#id_gold_01">
+                    <img src="images/henna-gold/henna-gold-full-01.jpeg" alt="Henna Gold Full" class="img-henna" />
+                </a>
+                
+                <!-- Bagian Pop-up (Modal) -->
+                <div class="modal fade" id="id_gold_01" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                            <div class="modal-body">
+                                <img src="images/henna-gold/henna-gold-full-01.jpeg" alt="Henna Gold Full" style="width: 100%;" />
+                            </div>
+                            <div class="col-md-12 description">
+                                <!-- Diganti ke Gold Elegance agar sesuai -->
+                                <h4>Gold Elegance (Full)</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-12 description">
-              <h4>White Elegance (Full)</h4>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
+        <!-- Kamu bisa menambah gambar ke-2 di bawah sini dengan mengganti ID nya -->
+
+    </div> <!-- Penutup gal-container -->
 
 </body>
 </html>
