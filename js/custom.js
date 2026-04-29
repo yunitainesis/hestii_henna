@@ -27,11 +27,7 @@
 				}
 			}
 		});
-		  // Activate scrollspy to add active class to navbar items on scroll
-		  $('body').scrollspy({
-			target: '#mainNav',
-			offset: 54
-		  });
+
 		/* =========================
             SCROLL MENU
         =========================*/
@@ -196,36 +192,43 @@
 			return false;
 		});
 		// Color Skins
-		$('.switcher').click(function(){
-			var title = jQuery(this).attr('title');		
-			jQuery('#changeable-colors').attr('href', 'css/colors/' + title + '.css');				
-			return false;
-		});	
-		
-		jQuery(".orange-bg").on('click',function(){
-			jQuery(".logo-header img").attr("src", "images/logo.png");
-			jQuery(".footer-logo .text-center img").attr("src", "images/logo.png");
-			return false;
-		});
+		$(document).ready(function() {
+    // Fungsi untuk menangani perubahan warna tema
+    $('.switcher').on('click', function() {
+        var colorTitle = $(this).attr('title');
+        var hexColor = '';
 
-		jQuery(".strong-blue-bg").on('click',function(){
-			jQuery(".logo-header img").attr("src", "images/logo2.png");
-			jQuery(".footer-logo .text-center img").attr("src", "images/logo2.png");
-			return false;
-		});
+        // Mapping warna sesuai permintaan kamu
+        switch(colorTitle) {
+            case 'orange':
+                hexColor = '#e75b1e';
+                break;
+            case 'strong-blue':
+                hexColor = '#1E69B8';
+                break;
+            case 'moderate-green':
+                hexColor = '#8dc63f';
+                break;
+            case 'vivid-yellow':
+                hexColor = '#fdcb03';
+                break;
+            case 'pink':
+                hexColor = '#da5581';
+                break;
+            default:
+                hexColor = '#e75b1e'; // Kembali ke orange jika tidak cocok
+        }
 
-		jQuery(".moderate-green-bg").on('click',function(){
-			jQuery(".logo-header img").attr("src", "images/logo3.png");
-			jQuery(".footer-logo .text-center img").attr("src", "images/logo3.png");
-			return false;
-		});
-
-		jQuery(".vivid-yellow-bg").on('click',function(){
-			jQuery(".logo-header img").attr("src", "images/logo4.png");
-			jQuery(".footer-logo .text-center img").attr("src", "images/logo4.png");
-			return false;
-		});
-
+        // Eksekusi perubahan warna pada variabel root CSS
+        if (hexColor !== '') {
+            document.documentElement.style.setProperty('--main-theme-color', hexColor)[cite: 7];
+            
+            // Opsional: Jika ada elemen yang menggunakan style inline dari JS bawaan template, 
+            // kita paksa timpa di sini agar sinkron.
+            console.log('Theme color changed to: ' + hexColor)[cite: 7];
+        }
+    });
+});
 		/* ==============================================
 			PARALLAX
 		=============================================== */	
