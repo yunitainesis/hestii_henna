@@ -55,35 +55,39 @@
     <!-- Container Galeri (Cukup Satu) -->
     <div class="gal-container clearfix">
 
-        <!-- ======================== -->
-        <!-- GAMBAR 1: HENNA GOLD FULL -->
-        <!-- ======================== -->
-        <div class="col-md-4 col-sm-6 col-xs-12 gal-item">
-            <div class="box">
-                <!-- Tombol klik yang memicu pop-up (Modal) -->
-                <a href="#" data-toggle="modal" data-target="#id_gold_01">
-                    <img src="images/henna-gold/gold_full/henna-gold-full-01.jpeg" class="img-henna" style="height: 350px !important; width: 100%; object-fit: cover;" />
-                </a>
-                
-                <!-- Bagian Pop-up (Modal) -->
-                <div class="modal fade" id="id_gold_01" tabindex="-1" role="dialog">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                            </button>
-                            <div class="modal-body">
-                                <img src="images/henna-gold/gold_full/henna-gold-full-01.jpeg" alt="Henna Gold Full" style="width: 100%;" />
-                            </div>
-                            <div class="col-md-12 description">
-                                <!-- Diganti ke Gold Elegance agar sesuai -->
-                                <h4>Gold Elegance (Full)</h4>
-                            </div>
-                        </div>
-                    </div>
+<!-- ======================== -->
+<!-- GAMBAR 1: HENNA GOLD FULL -->
+<!-- ======================== -->
+<div class="col-md-4 col-sm-6 col-xs-12 gal-item">
+    
+    <!-- Kotak Gambar Utama (Thumbnail) -->
+    <div class="box">
+        <!-- Tombol klik yang memicu pop-up (Modal) -->
+        <a href="#" data-toggle="modal" data-target="#id_gold_01">
+            <img src="images/henna-gold/gold_full/henna-gold-full-01.jpeg" class="img-henna" alt="Henna Gold Full" style="height: 350px !important; width: 100%; object-fit: cover;" />
+        </a>
+    </div>
+
+    <!-- Bagian Pop-up (Modal) -->
+    <!-- Diletakkan di LUAR "box" agar ukurannya tidak terpotong -->
+    <div class="modal fade" id="id_gold_01" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <div class="modal-body">
+                    <!-- Gambar ukuran besar -->
+                    <img src="images/henna-gold/gold_full/henna-gold-full-01.jpeg" alt="Henna Gold Full" style="width: 100%;" />
+                </div>
+                <div class="col-md-12 description">
+                    <h4>Gold Elegance (Full)</h4>
                 </div>
             </div>
         </div>
+    </div>
+    
+</div>
 <!-- ======================== -->
 <!-- GAMBAR 2: HENNA GOLD FULL -->
 <!-- ======================== -->
@@ -388,6 +392,9 @@
 
 
     </div> <!-- Penutup gal-container -->
+<!-- Wajib ditambahkan agar efek klik gambar berfungsi -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 
 </body>
 </html>
