@@ -1912,11 +1912,3 @@ textarea:focus, input:focus, select:focus, .bootstrap-select .dropdown-toggle:fo
   object-fit: cover;
   border-radius: 5px;
 }
-/* Penyesuaian ukuran gambar pada Popup Modal Gallery */
-.gal-container .modal-body img {
-    max-height: 70vh !important; /* Membatasi tinggi maksimal gambar 70% dari tinggi layar */
-    width: 100% !important;
-    object-fit: contain !important; /* Memastikan seluruh bagian gambar terlihat utuh dan tidak gepeng */
-    margin: 0 auto;
-    display: block;
-}
