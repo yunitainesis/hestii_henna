@@ -1912,3 +1912,21 @@ textarea:focus, input:focus, select:focus, .bootstrap-select .dropdown-toggle:fo
   object-fit: cover;
   border-radius: 5px;
 }
+/* Mengatur teks deskripsi di dalam Pop-up agar ke tengah dan estetik */
+.gal-container .modal-content .description {
+    text-align: center;    /* Membuat teks berada di tengah */
+    float: none;           /* Menghilangkan paksaan rata kiri dari templat */
+    width: 100%;           /* Memastikan lebar penuh agar bisa ditengah */
+    padding: 20px 15px;    /* Memberi ruang agar tidak terlalu mepet */
+    background: #fff;      /* Warna latar belakang area teks */
+}
+
+.gal-container .modal-content .description h4 {
+    font-family: 'Paprika', cursive; /* Menggunakan font estetik bawaan templat */
+    font-weight: 800;                /* Membuat tulisan menjadi sangat tebal (Bold) */
+    font-size: 22px;                 /* Ukuran sedikit diperbesar agar elegan */
+    color: #b8860b;                  /* Warna Emas Tua (Dark Goldenrod) agar lebih mewah */
+    letter-spacing: 1px;             /* Memberi jarak antar huruf agar terlihat profesional */
+    margin: 0;
+    text-transform: capitalize;      /* Memastikan huruf depan kata otomatis besar */
+}
