@@ -333,20 +333,33 @@ html, body{ height: 100%; }
 }
 
 :root {
-    /* Set default awal ke Orange */
-    --main-theme-color: #e75b1e; 
+    /* Set default awal ke Gold */
+    --main-theme-color: #C5A059; 
 }
 
 /* Memastikan elemen navigasi menggunakan variabel root */
 #mainNav .nav.navbar-nav li a:hover,
 #mainNav .nav.navbar-nav li.active a {
-    color: var(--main-theme-color);
+    color: var(--main-theme-color) !important;
     background: transparent;
 }
 
-#mainNav .nav.navbar-nav li a::after, 
-#mainNav .nav.navbar-nav li a::before {
-    background: var(--main-theme-color) !important;
+/* Hover Underline */
+#mainNav .nav.navbar-nav li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 10px;
+    left: 50%;
+    background-color: var(--main-theme-color) !important;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+#mainNav .nav.navbar-nav li a:hover::after,
+#mainNav .nav.navbar-nav li.active a::after {
+    width: 70%;
 }
 .fixed-menu {
     position: fixed !important;
@@ -1810,11 +1823,11 @@ textarea:focus, input:focus, select:focus, .bootstrap-select .dropdown-toggle:fo
 	position: fixed;
 	width:180px;
 	height: auto;
-	top:150px;
+	top:85px;
 	/*min-height: 200px;*/
 	text-align:left;
 	border:1px solid rgba(100,100,100,0.55);
-	z-index: 11;
+	z-index: 9999;
 	border-top-right-radius:5px;
 	border-bottom-right-radius:5px;
 	-webkit-transition: all 0.5s;
@@ -1834,9 +1847,12 @@ textarea:focus, input:focus, select:focus, .bootstrap-select .dropdown-toggle:fo
 #color-panel .segment{
 	width:100%;
 	padding:15px 10px 15px 0;
-	border:1px solid rgba(100,100,100,0.55);
+	border:1px solid rgba(100,100,100,0.3);
 	padding:15px 25px;
-	background:rgba(50,50,50,0.95);
+	background:rgba(10,10,10,0.6);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	border-radius: 0 0 0 10px;
 }
 
 #color-panel a.panel-button{
@@ -1911,4 +1927,17 @@ textarea:focus, input:focus, select:focus, .bootstrap-select .dropdown-toggle:fo
   aspect-ratio: 3 / 2;
   object-fit: cover;
   border-radius: 5px;
+}
+
+/* Paint Brush Animation */
+@keyframes swing {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(15deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-15deg); }
+  100% { transform: rotate(0deg); }
+}
+.swinging-icon {
+  animation: swing 2s infinite ease-in-out;
+  transform-origin: bottom left;
 }

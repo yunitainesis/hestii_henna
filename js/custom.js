@@ -200,33 +200,28 @@
 
         // Mapping warna sesuai permintaan kamu
         switch(colorTitle) {
-            case 'orange':
-                hexColor = '#e75b1e';
-                break;
-            case 'strong-blue':
-                hexColor = '#1E69B8';
-                break;
-            case 'moderate-green':
-                hexColor = '#8dc63f';
-                break;
-            case 'vivid-yellow':
-                hexColor = '#fdcb03';
-                break;
-            case 'pink':
-                hexColor = '#da5581';
-                break;
-            default:
-                hexColor = '#e75b1e'; // Kembali ke orange jika tidak cocok
+            case 'orange': hexColor = '#e75b1e'; break;
+            case 'blue': hexColor = '#1E69B8'; break;
+            case 'green': hexColor = '#8dc63f'; break;
+            case 'yellow': hexColor = '#fdcb03'; break;
+            case 'pink': hexColor = '#da5581'; break;
+            case 'maroon': hexColor = '#9A5B5B'; break;
+            case 'brown': hexColor = '#A67D5D'; break;
+            case 'purple': hexColor = '#8B6D9C'; break;
+            case 'gold': hexColor = '#C5A059'; break;
+            default: hexColor = '#C5A059';
         }
+
+        // Update css href for general template styles
+        $('#changeable-colors').attr('href', 'css/colors/' + colorTitle + '.css');
 
         // Eksekusi perubahan warna pada variabel root CSS
         if (hexColor !== '') {
-            document.documentElement.style.setProperty('--main-theme-color', hexColor)[cite: 7];
-            
-            // Opsional: Jika ada elemen yang menggunakan style inline dari JS bawaan template, 
-            // kita paksa timpa di sini agar sinkron.
-            console.log('Theme color changed to: ' + hexColor)[cite: 7];
+            document.documentElement.style.setProperty('--main-theme-color', hexColor);
         }
+        
+        // Otomatis menutup panel setelah memilih warna
+        $('#color-panel').removeClass('open-color-panel').addClass('close-color-panel');
     });
 });
 		/* ==============================================
