@@ -1928,16 +1928,3 @@ textarea:focus, input:focus, select:focus, .bootstrap-select .dropdown-toggle:fo
   object-fit: cover;
   border-radius: 5px;
 }
-
-/* Paint Brush Animation */
-@keyframes swing {
-  0% { transform: rotate(0deg); }
-  25% { transform: rotate(15deg); }
-  50% { transform: rotate(0deg); }
-  75% { transform: rotate(-15deg); }
-  100% { transform: rotate(0deg); }
-}
-.swinging-icon {
-  animation: swing 2s infinite ease-in-out;
-  transform-origin: bottom left;
-}
