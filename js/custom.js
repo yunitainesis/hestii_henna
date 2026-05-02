@@ -241,9 +241,6 @@
             default: hexColor = '#C5A059';
         }
 
-        // Update css href for general template styles
-        $('#changeable-colors').attr('href', 'css/colors/' + colorTitle + '.css');
-
         // Eksekusi perubahan warna pada variabel root CSS
         if (hexColor !== '') {
             document.documentElement.style.setProperty('--main-theme-color', hexColor);

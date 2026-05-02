@@ -713,6 +713,57 @@ body {
     overflow: hidden;
 }
 
+/* Force transparent background so global fixed background shows through */
+.about-main,
+.gallery-main,
+.pricing-main,
+.reservations-main {
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+/* Henna Guide Background */
+.blog-main {
+    background-image: url('../images/henna-putih/putih_simple/henna-putih-simple-04.jpeg') !important;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    position: relative;
+}
+
+.blog-main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    /* Soft overlay to ensure readability */
+    z-index: 1;
+}
+
+.blog-main .container {
+    position: relative;
+    z-index: 2;
+}
+
+.global-aesthetic-wrapper {
+    position: relative;
+    width: 100%;
+    background: #fcf9f9;
+}
+
+.global-aesthetic-wrapper .modern-wedding-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+}
+
 .relative-z {
     position: relative;
     z-index: 10;
@@ -755,6 +806,17 @@ body {
     right: -100px;
     animation-direction: alternate-reverse;
 }
+
+.blob-3 {
+    width: 250px;
+    height: 250px;
+    background: rgba(220, 200, 240, 0.4);
+    /* Soft pastel violet/lilac */
+    top: 40%;
+    right: -50px;
+    animation-delay: 2s;
+}
+
 
 @keyframes blobMorph {
     0% {
@@ -799,6 +861,34 @@ body {
     left: 20%;
     animation-delay: 0.5s;
 }
+
+.sparkle-4 {
+    width: 35px;
+    height: 35px;
+    top: 30%;
+    right: 25%;
+    animation-delay: 2.5s;
+    opacity: 0.6;
+}
+
+.sparkle-5 {
+    width: 25px;
+    height: 25px;
+    top: 70%;
+    left: 10%;
+    animation-delay: 1.2s;
+    opacity: 0.7;
+}
+
+.sparkle-6 {
+    width: 15px;
+    height: 15px;
+    top: 45%;
+    left: 40%;
+    animation-delay: 3s;
+    opacity: 0.5;
+}
+
 
 @keyframes sparkleFloat {
     0% {
@@ -903,6 +993,51 @@ body {
     border-color: var(--main-theme-color);
 }
 
+/* Boho Arch Gallery Cards */
+.arch-gallery-card {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 120px 120px 20px 20px;
+    overflow: hidden;
+    padding-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.arch-gallery-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.arch-img {
+    width: 100%;
+    padding: 10px;
+}
+
+.arch-img img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 110px 110px 15px 15px;
+}
+
+.arch-content {
+    padding: 15px 20px;
+}
+
+.arch-content h4 {
+    color: #4a4a4a;
+    font-family: 'nautilus_pompiliusregular';
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
 /* Modern Price Cards */
 .price-card-modern {
     background: rgba(255, 255, 255, 0.85);
@@ -919,7 +1054,8 @@ body {
 
 .price-card-modern:hover {
     transform: translateY(-15px);
-    box-shadow: 0 30px 50px rgba(220, 100, 120, 0.2); /* Fallback soft shadow */
+    box-shadow: 0 30px 50px rgba(220, 100, 120, 0.2);
+    /* Fallback soft shadow */
 }
 
 .price-img img {
@@ -2368,4 +2504,251 @@ select:focus,
     aspect-ratio: 3 / 2;
     object-fit: cover;
     border-radius: 5px;
+}
+
+/* =======================================
+   THEME COLOR VARIABLES & FALLBACKS
+======================================= */
+:root {
+    --main-theme-color: #C5A059;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: var(--main-theme-color) !important;
+}
+
+.main-menu .navbar-default .navbar-nav .active a {
+    color: var(--main-theme-color) !important;
+}
+
+.main-menu nav li a::after {
+    background: var(--main-theme-color) !important;
+}
+
+.typer {
+    color: var(--main-theme-color) !important;
+}
+
+.banner-text h2 {
+    color: var(--main-theme-color) !important;
+}
+
+.book-btn a {
+    background: var(--main-theme-color) !important;
+    border-color: var(--main-theme-color) !important;
+}
+
+.book-btn a:hover {
+    border-color: var(--main-theme-color) !important;
+}
+
+.hvr-underline-from-center::before {
+    background: var(--main-theme-color) !important;
+}
+
+.block-title {
+    color: var(--main-theme-color);
+}
+
+.item-type-zoom .item-hover:hover::before {
+    background: var(--main-theme-color) !important;
+    opacity: 0.5;
+}
+
+.special-box .owl-theme .owl-controls .owl-page.active span {
+    background: var(--main-theme-color) !important;
+}
+
+.offer-item div h3 {
+    color: var(--main-theme-color) !important;
+}
+
+.tab-menu .is-active {
+    background: var(--main-theme-color) !important;
+}
+
+.tab-menu .slick-arrow.slick-prev {
+    background-color: var(--main-theme-color) !important;
+}
+
+.tab-menu .slick-arrow.slick-next {
+    background-color: var(--main-theme-color) !important;
+}
+
+.offer-item .offer-price {
+    border-color: var(--main-theme-color) !important;
+}
+
+.sf-team:hover .text-col {
+    background-color: var(--main-theme-color) !important;
+}
+
+.gal-item a::after {
+    background-color: var(--main-theme-color) !important;
+    opacity: 0.75;
+}
+
+.overlay i:hover {
+    border-color: var(--main-theme-color) !important;
+    color: var(--main-theme-color) !important;
+}
+
+.blog-btn-v a,
+.book-srv a {
+    background: var(--main-theme-color) !important;
+    border-color: var(--main-theme-color) !important;
+}
+
+.panel-pricing .panel-heading {
+    background: var(--main-theme-color) !important;
+}
+
+.panel-pricing {
+    border-color: var(--main-theme-color) !important;
+}
+
+.panel-body p strong span {
+    color: var(--main-theme-color) !important;
+}
+
+.pricing-main .panel-footer a {
+    background: var(--main-theme-color) !important;
+    border-color: var(--main-theme-color) !important;
+}
+
+.pricing-main .panel-footer a:hover {
+    border-color: var(--main-theme-color) !important;
+}
+
+.reserve-book-btn button {
+    background: var(--main-theme-color) !important;
+    border-color: var(--main-theme-color) !important;
+}
+
+.reserve-book-btn button:hover a {
+    color: #000000;
+}
+
+.footer-news form a {
+    background: var(--main-theme-color) !important;
+}
+
+.footer-news form a:hover {
+    border-color: var(--main-theme-color) !important;
+}
+
+.footer-box-a h3,
+.footer-box-b h3,
+.footer-box-c h3,
+.footer-box-d h3 {
+    color: var(--main-theme-color) !important;
+}
+
+.footer-box-c p a:hover,
+.footer-box-b ul li a:hover {
+    color: var(--main-theme-color) !important;
+}
+
+.footer-box .socials-box a:hover .social-circle-border {
+    color: var(--main-theme-color) !important;
+}
+
+.footer-box-c p i {
+    color: var(--main-theme-color) !important;
+}
+
+.copyright-main {
+    background: var(--main-theme-color) !important;
+}
+
+#color-panel a.panel-button:hover {
+    color: var(--main-theme-color) !important;
+}
+
+/* =======================================
+   MODERN CONTACT & SOCIAL LINKS
+======================================= */
+.contact-main {
+    background: transparent !important;
+}
+
+.social-links-modern {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    color: #fff !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.social-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.social-btn i,
+.social-btn svg {
+    font-size: 20px;
+}
+
+.social-btn.whatsapp {
+    background: #25D366;
+}
+
+.social-btn.instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+.social-btn.tiktok {
+    background: #000000;
+}
+
+/* Navbar Hover Effect */
+.main-menu .navbar-default .navbar-nav li a {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.main-menu .navbar-default .navbar-nav li a:hover {
+    -webkit-text-stroke: 1px #fff;
+    font-weight: bold !important;
+}
+
+.main-menu .navbar-default .navbar-nav li a::before {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--main-theme-color);
+    transition: width 0.3s ease;
+}
+
+.main-menu .navbar-default .navbar-nav li a:hover::before {
+    width: 70%;
+}
+
+/* Navbar Active Effect */
+.main-menu .navbar-default .navbar-nav li.active a {
+    -webkit-text-stroke: 1px #fff;
+    font-weight: bold !important;
+    background-color: transparent !important;
+}
+
+.main-menu .navbar-default .navbar-nav li.active a::before {
+    width: 70%;
 }
