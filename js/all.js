@@ -64,19 +64,9 @@ Typer.prototype.doTyping = function() {
 
   if (p.building) {
     if (p.char == [...this.words[w]].length) {
-      p.building = false;
       p.atWordEnd = true;
     } else {
       p.char += 1;
-    }
-  } else {
-    if (p.char == 0) {
-      p.building = true;
-      p.word = (p.word + 1) % this.words.length;
-      this.colorIndex = (this.colorIndex + 1) % this.colors.length;
-      this.element.style.color = this.colors[this.colorIndex];
-    } else {
-      p.char -= 1;
     }
   }
 
@@ -88,7 +78,16 @@ Typer.prototype.doTyping = function() {
 
   var myself = this;
   setTimeout(function() {
-    if (myself.typing) { myself.doTyping(); };
+    if (myself.typing) { 
+      if (p.atWordEnd) {
+        p.atWordEnd = false;
+        p.char = 0;
+        p.word = (p.word + 1) % myself.words.length;
+        myself.colorIndex = (myself.colorIndex + 1) % myself.colors.length;
+        myself.element.style.color = myself.colors[myself.colorIndex];
+      }
+      myself.doTyping(); 
+    };
   }, p.atWordEnd ? this.deleteDelay : this.delay);
 };
 

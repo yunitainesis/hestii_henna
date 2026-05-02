@@ -32,11 +32,23 @@
             SCROLL MENU
         =========================*/
 		$(window).on('scroll', function () {
+			// Navbar Transparency on Scroll
 			if ($(window).scrollTop() > 50) {
 				$('.header-block-top').addClass('fixed-menu');
 			} else {
 				$('.header-block-top').removeClass('fixed-menu');
 			}
+
+			// Manual ScrollSpy Fix
+			var scrollPos = $(document).scrollTop();
+			$('#navbar ul li a').each(function () {
+				var currLink = $(this);
+				var refElement = $(currLink.attr("href"));
+				if (refElement.position().top <= scrollPos + 100 && refElement.position().top + refElement.height() > scrollPos) {
+					$('#navbar ul li').removeClass("active");
+					currLink.parent().addClass("active");
+				}
+			});
 		});
 		
 		/* =========================
