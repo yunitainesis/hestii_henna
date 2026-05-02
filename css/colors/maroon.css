@@ -18,7 +18,7 @@
 	border: 3px solid #9A5B5B;
 }
 .book-btn a:hover{
-	border: 3px solid #f04900;
+	border: 3px solid #9A5B5B;
 }
 .hvr-underline-from-center::before{
 	background:#9A5B5B;
@@ -83,7 +83,7 @@
 	border: 3px solid #9A5B5B;
 }
 .pricing-main .panel-footer a:hover{
-	border: 3px solid #f04900;
+	border: 3px solid #9A5B5B;
 }
 
 .reserve-book-btn button{
@@ -132,9 +132,4 @@
 
 #color-panel a.panel-button:hover{
 	color: #9A5B5B;		
-}
-
-/* Outline for dark colors */
-.typer, .banner-text h2, .block-title, .offer-item div h3, .footer-box-a h3, .footer-box-b h3, .footer-box-c h3, .footer-box-d h3, .blog-block .blog-dit h2 {
-    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff, 0px 2px 4px rgba(0,0,0,0.2);
 }

@@ -15,7 +15,7 @@ const colors = {
 for (const [name, hex] of Object.entries(colors)) {
     // orange hex in uppercase or lowercase might be present. 
     // Usually it's #e75b1e in orange.css.
-    let newCss = orangeCss.replace(/#e75b1e/gi, hex);
+    let newCss = orangeCss.replace(/#e75b1e/gi, hex).replace(/#f04900/gi, hex);
     fs.writeFileSync(`css/colors/${name}.css`, newCss);
 }
 console.log('Color CSS generated.');

@@ -18,10 +18,10 @@
 	border: 3px solid #C5A059;
 }
 .book-btn a:hover{
-	border: 3px solid #f04900;
+	border: 3px solid #C5A059;
 }
 .hvr-underline-from-center::before{
-	background: #D4AF37;
+	background:#C5A059;
 }
 .block-title{
 	color: #C5A059;
@@ -83,7 +83,7 @@
 	border: 3px solid #C5A059;
 }
 .pricing-main .panel-footer a:hover{
-	border: 3px solid #f04900;
+	border: 3px solid #C5A059;
 }
 
 .reserve-book-btn button{

@@ -43,10 +43,18 @@
 			var scrollPos = $(document).scrollTop();
 			$('#navbar ul li a').each(function () {
 				var currLink = $(this);
-				var refElement = $(currLink.attr("href"));
-				if (refElement.position().top <= scrollPos + 100 && refElement.position().top + refElement.height() > scrollPos) {
-					$('#navbar ul li').removeClass("active");
-					currLink.parent().addClass("active");
+				var href = currLink.attr("href");
+				if (href && href.charAt(0) === '#' && href.length > 1) {
+					var refElement = $(href);
+					if (refElement.length && refElement.is(':visible')) {
+						if (refElement.position().top <= scrollPos + 100 && refElement.position().top + refElement.outerHeight() > scrollPos) {
+							$('#navbar ul li').removeClass("active");
+							currLink.parent().addClass("active");
+							if (currLink.closest('.dropdown').length) {
+								currLink.closest('.dropdown').addClass('active');
+							}
+						}
+					}
 				}
 			});
 		});
@@ -60,6 +68,15 @@
 			if (!$parent.hasClass('active')) {
 				$parent.addClass('active');
 			}
+		});
+
+		// Close dropdown immediately on click
+		$('.dropdown-menu li a').on('click', function() {
+			var $dropdownMenu = $(this).closest('.dropdown-menu');
+			$dropdownMenu.addClass('force-hide');
+			setTimeout(function() {
+				$dropdownMenu.removeClass('force-hide');
+			}, 300); // Remove force-hide after transition time
 		});
 		
 		/* =========================

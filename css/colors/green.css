@@ -18,7 +18,7 @@
 	border: 3px solid #8dc63f;
 }
 .book-btn a:hover{
-	border: 3px solid #f04900;
+	border: 3px solid #8dc63f;
 }
 .hvr-underline-from-center::before{
 	background:#8dc63f;
@@ -83,7 +83,7 @@
 	border: 3px solid #8dc63f;
 }
 .pricing-main .panel-footer a:hover{
-	border: 3px solid #f04900;
+	border: 3px solid #8dc63f;
 }
 
 .reserve-book-btn button{
